@@ -1,6 +1,7 @@
 import 'package:flutter_educational_app_ui/routes/routes.dart';
-import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
+// import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
 import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
+// import 'package:flutter_educational_app_ui/screens/welcome_screen.dart';w
 import 'package:flutter_educational_app_ui/theme/theme_style.dart';
 import 'package:flutter/material.dart';
 

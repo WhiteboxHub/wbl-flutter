@@ -27,7 +27,7 @@ class AppBarWidget extends StatelessWidget {
             children: [
               Text(
                 // 'Hello,\nUser',
-                'Welcome,\nWhitebhox-Learning',
+                'Welcome,\nWhitebox-Learning',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: kGreyWhiteColor,
                       fontWeight: FontWeight.bold,
