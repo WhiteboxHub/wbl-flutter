@@ -15,7 +15,7 @@ class FeaturedScreen extends StatefulWidget {
 class _FeaturedScreenState extends State<FeaturedScreen> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
+    return const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         body: Column(
@@ -34,25 +34,25 @@ class HomeBodyWidget extends StatelessWidget {
 
   final List<Map<String, String>> courses = const [
     {
-      'courseCategoryImage': 'assets/images/web-development.png',
-      'courseCategoryTitle': 'Development',
-      'numberOfCourses': '55+ Courses',
+      'courseCategoryImage': 'assets/images/machine_learning.jpeg',
+      'courseCategoryTitle': 'Machine Learning',
+      'numberOfCourses': 'Enroll Now',
     },
     {
-      'courseCategoryImage': 'assets/images/economics.png',
-      'courseCategoryTitle': 'Accounting',
-      'numberOfCourses': '5+ Courses',
+      'courseCategoryImage': 'assets/images/data_engineer.jpg',
+      'courseCategoryTitle': 'Data Engineering',
+      'numberOfCourses': 'Enroll Now',
     },
     {
-      'courseCategoryImage': 'assets/images/seo.png',
-      'courseCategoryTitle': 'Social Media Marketing',
-      'numberOfCourses': '20+ Courses',
+      'courseCategoryImage': 'assets/images/fullstack_development.jpeg',
+      'courseCategoryTitle': 'Fullstack Development',
+      'numberOfCourses': 'Enroll Now',
     },
-    {
-      'courseCategoryImage': 'assets/images/content-strategy.png',
-      'courseCategoryTitle': 'Digital Marketing',
-      'numberOfCourses': '10+ Courses',
-    },
+    // {
+    //   'courseCategoryImage': 'assets/images/content-strategy.png',
+    //   'courseCategoryTitle': 'Quality Engineering',
+      // 'numberOfCourses': '10+ Courses',
+    // },
   ];
 
   @override

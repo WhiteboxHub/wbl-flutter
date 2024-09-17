@@ -11,14 +11,14 @@ class ThemeStyle {
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
-        foregroundColor: MaterialStateProperty.all(kPurpleColor),
-        shape: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
+        foregroundColor: WidgetStateProperty.all(kPurpleColor),
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        padding: MaterialStateProperty.all(
+        padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 8,
@@ -33,49 +33,49 @@ class ThemeStyle {
     ),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all(kPurpleColor)),
+          foregroundColor: WidgetStateProperty.all(kPurpleColor)),
     ),
     menuButtonTheme: MenuButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
-        foregroundColor: MaterialStateProperty.all(kPurpleColor),
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
+        foregroundColor: WidgetStateProperty.all(kPurpleColor),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
-        foregroundColor: MaterialStateProperty.all(kPurpleColor),
-        side: MaterialStateProperty.all<BorderSide>(
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
+        foregroundColor: WidgetStateProperty.all(kPurpleColor),
+        side: WidgetStateProperty.all<BorderSide>(
           BorderSide(color: kPurpleColor),
         ),
       ),
     ),
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPurpleColor),
+        backgroundColor: WidgetStateProperty.all(kPurpleColor),
       ),
     ),
     datePickerTheme: DatePickerThemeData(
       backgroundColor: kGreyWhiteColor,
-      todayBackgroundColor: MaterialStatePropertyAll(kPrimarySwatchColor),
+      todayBackgroundColor: WidgetStatePropertyAll(kPrimarySwatchColor),
       confirmButtonStyle: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimarySwatchColor),
+        backgroundColor: WidgetStateProperty.all(kPrimarySwatchColor),
       ),
     ),
     radioTheme: RadioThemeData(
-      fillColor: MaterialStateColor.resolveWith(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.selected)) {
+      fillColor: WidgetStateColor.resolveWith(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
             return kTextColor;
           }
           return kTextColor;
@@ -83,16 +83,16 @@ class ThemeStyle {
       ),
     ),
     checkboxTheme: CheckboxThemeData(
-      side: MaterialStateBorderSide.resolveWith(
-        (Set<MaterialState> states) {
+      side: WidgetStateBorderSide.resolveWith(
+        (Set<WidgetState> states) {
           return BorderSide(color: kTextColor);
         },
       ),
     ),
     switchTheme: SwitchThemeData(
-      trackColor: MaterialStateColor.resolveWith(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.selected)) {
+      trackColor: WidgetStateColor.resolveWith(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
             return kTextColor;
           }
           return kTextColor;

@@ -18,12 +18,12 @@ class CourseCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(CourseScreen.routeName);
-
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
         decoration: BoxDecoration(
-          color: kGreyWhiteColor,
+          // color: kGreyWhiteColor,
+          color:const Color.fromARGB(255, 132, 126, 247),
           boxShadow: [
             BoxShadow(
               color: kLightGreyColor,
@@ -35,7 +35,7 @@ class CourseCardWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ClipRRect(
+            ClipRRect(              
               borderRadius: BorderRadius.circular(6.0),
               child: Image.asset(
                 courseCategoryImage,
@@ -46,24 +46,26 @@ class CourseCardWidget extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,              
               child: Text(
                 courseCategoryTitle,
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      color: kTextColor,
+                      color: Colors.white,
                     ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),
             ),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Text(
                 numberOfCourses,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: kTextColor.withOpacity(0.6),
+                      color: Colors.white.withOpacity(0.4),
                       fontWeight: FontWeight.bold,
+                      
                     ),
+                
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),

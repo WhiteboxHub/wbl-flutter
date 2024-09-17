@@ -8,10 +8,10 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-      height: 250,
+      height: 230,
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(25),
           bottomRight: Radius.circular(25),
         ),
@@ -27,7 +27,7 @@ class AppBarWidget extends StatelessWidget {
             children: [
               Text(
                 // 'Hello,\nUser',
-                'Welcome,\nWhitebox-Learning',
+                "Whitebox-Learning",
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: kGreyWhiteColor,
                       fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class AppBarWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           TextFormField(
             decoration: InputDecoration(
               fillColor: kGreyWhiteColor,
