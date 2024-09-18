@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
-import 'package:flutter_educational_app_ui/widgets/app_bar_widget.dart';
-import 'package:flutter_educational_app_ui/widgets/course_card_widget.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
+import 'package:wbl_mobile_app/widgets/app_bar_widget.dart';
+import 'package:wbl_mobile_app/widgets/course_card_widget.dart';
 
 class FeaturedScreen extends StatefulWidget {
   static const routeName = '/featured-screen';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/screens/course_screen.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:wbl_mobile_app/screens/course_screen.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
 
 class CourseCardWidget extends StatelessWidget {
   final String courseCategoryImage;

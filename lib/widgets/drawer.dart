@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
-// import 'package:flutter_educational_app_ui/screens/sign_in_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/sign_up_screen.dart';
+// import 'package:wbl_mobile_app/screens/sign_in_screen.dart';
+// import 'package:wbl_mobile_app/screens/sign_up_screen.dart';
 
 
 // class DrawerWidget extends StatelessWidget {
@@ -60,10 +60,10 @@
 
 
 // // import 'package:flutter/material.dart';
-// // import 'package:flutter_educational_app_ui/screens/sign_in_screen.dart';
-// // import 'package:flutter_educational_app_ui/screens/sign_up_screen.dart';
-// // import 'package:flutter_educational_app_ui/screens/schedule_screen.dart';
-// // import 'package:flutter_educational_app_ui/screens/resources_screen.dart';
+// // import 'package:wbl_mobile_app/screens/sign_in_screen.dart';
+// // import 'package:wbl_mobile_app/screens/sign_up_screen.dart';
+// // import 'package:wbl_mobile_app/screens/schedule_screen.dart';
+// // import 'package:wbl_mobile_app/screens/resources_screen.dart';
 
 // // class DrawerWidget extends StatelessWidget {
 // //   const DrawerWidget({super.key});

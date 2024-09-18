@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
-// import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
-// import 'package:flutter_educational_app_ui/theme/colors.dart';
+// import 'package:wbl_mobile_app/screens/featured_screen.dart';
+// import 'package:wbl_mobile_app/theme/colors.dart';
 
 // class TabScreen extends StatefulWidget {
 //   static const routeName = '/tab-screen';
@@ -74,11 +74,11 @@
 
 
 // import 'package:flutter/material.dart';
-// import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
-// import 'package:flutter_educational_app_ui/theme/colors.dart';
-// import 'package:flutter_educational_app_ui/screens/login_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/register_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/schedule_resources_screen.dart';
+// import 'package:wbl_mobile_app/screens/featured_screen.dart';
+// import 'package:wbl_mobile_app/theme/colors.dart';
+// import 'package:wbl_mobile_app/screens/login_screen.dart';
+// import 'package:wbl_mobile_app/screens/register_screen.dart';
+// import 'package:wbl_mobile_app/screens/schedule_resources_screen.dart';
 
 // class TabScreen extends StatefulWidget {
 //   static const routeName = '/tab-screen';
@@ -173,11 +173,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
-import 'package:flutter_educational_app_ui/screens/login_screen.dart';
-import 'package:flutter_educational_app_ui/screens/register_screen.dart';
-import 'package:flutter_educational_app_ui/screens/schedule_resources_screen.dart';
+import 'package:wbl_mobile_app/screens/featured_screen.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
+import 'package:wbl_mobile_app/screens/login_screen.dart';
+import 'package:wbl_mobile_app/screens/register_screen.dart';
+import 'package:wbl_mobile_app/screens/schedule_resources_screen.dart';
 
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab-screen';
@@ -191,7 +191,8 @@ class _TabScreenState extends State<TabScreen> {
   int selectedIndex = 0;
   static const List<Widget> tabScreensOptions = <Widget>[
     FeaturedScreen(),
-    Text('Index 1: Business'),
+    
+    // Text('Index 1: Business'),
     Text('Index 2: School'),
     Text('Index 3: Settings'),
   ];

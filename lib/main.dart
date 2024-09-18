@@ -1,8 +1,8 @@
-// import 'package:flutter_educational_app_ui/routes/routes.dart';
-// // import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
-// // import 'package:flutter_educational_app_ui/screens/welcome_screen.dart';w
-// import 'package:flutter_educational_app_ui/theme/theme_style.dart';
+// import 'package:wbl_mobile_app/routes/routes.dart';
+// // import 'package:wbl_mobile_app/screens/splash_screen.dart';
+// import 'package:wbl_mobile_app/screens/tab_screen.dart';
+// // import 'package:wbl_mobile_app/screens/welcome_screen.dart';w
+// import 'package:wbl_mobile_app/theme/theme_style.dart';
 // import 'package:flutter/material.dart';
 
 // void main() async {
@@ -26,9 +26,9 @@
 //   }
 // }
 
-  import 'package:flutter_educational_app_ui/routes/routes.dart';
-  import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
-  import 'package:flutter_educational_app_ui/theme/theme_style.dart';
+  import 'package:wbl_mobile_app/routes/routes.dart';
+  import 'package:wbl_mobile_app/screens/splash_screen.dart';
+  import 'package:wbl_mobile_app/theme/theme_style.dart';
   import 'package:flutter/material.dart';
 
   void main() async {
@@ -51,3 +51,54 @@
         );
     }
   }
+
+
+
+
+// import 'package:flutter/material.dart';
+// import './widgets/calendar_widget.dart';
+// import 'google_calendar_api.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Calendar App',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: MyHomePage(),
+//     );
+//   }
+// }
+
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   final GoogleCalendarApi _googleCalendarApi = GoogleCalendarApi();
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _googleCalendarApi.authenticate();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Flutter Calendar App'),
+//       ),
+//       body: Center(
+//         child: CalendarWidget(),
+//       ),
+//     );
+//   }
+// }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
-import 'package:flutter_educational_app_ui/widgets/single_course_list_tile_widget.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
+import 'package:wbl_mobile_app/widgets/single_course_list_tile_widget.dart';
 
 class CourseScreen extends StatefulWidget {
   static const routeName = '/course-screen';

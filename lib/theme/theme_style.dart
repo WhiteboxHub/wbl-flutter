@@ -1,4 +1,4 @@
-import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class ThemeStyle {

@@ -1,6 +1,6 @@
 import 'dart:async';
-// import 'package:flutter_educational_app_ui/screens/sign_in_screen.dart';
-import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
+// import 'package:wbl_mobile_app/screens/sign_in_screen.dart';
+import 'package:wbl_mobile_app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

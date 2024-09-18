@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
@@ -39,6 +39,7 @@ class AppBarWidget extends StatelessWidget {
                 Icons.notifications,
                 color: kGreyWhiteColor,
               ),
+              // const CustomCarousel(),
             ],
           ),
           const SizedBox(height: 20),
