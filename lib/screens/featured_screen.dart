@@ -20,7 +20,7 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            AppBarWidget(),
+            // AppBarWidget(),
             HomeBodyWidget(),
           ],
         ),

@@ -33,12 +33,10 @@ import 'package:wbl_mobile_app/screens/sign_up_screen.dart';
 import 'package:wbl_mobile_app/screens/splash_screen.dart';
 import 'package:wbl_mobile_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:wbl_mobile_app/screens/tab_screen.dart';
-import 'package:wbl_mobile_app/screens/settings_screen.dart';
-import 'package:wbl_mobile_app/screens/home_screen.dart';
-import 'package:wbl_mobile_app/screens/login_screen.dart';
-import 'package:wbl_mobile_app/screens/register_screen.dart';
-import 'package:wbl_mobile_app/screens/schedule_resources_screen.dart';
+import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
+import 'package:flutter_educational_app_ui/screens/my_learning_screen.dart';
+import 'package:flutter_educational_app_ui/screens/my_wishlist_screen.dart';
+import 'package:flutter_educational_app_ui/screens/settings_screen.dart';
 
 class PageRoutes {
   Map<String, WidgetBuilder> routes() {
@@ -51,11 +49,9 @@ class PageRoutes {
       ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
       FeaturedScreen.routeName: (context) => const FeaturedScreen(),
       CourseScreen.routeName: (context) => const CourseScreen(),
+      MyLearningScreen.routeName: (context) => const MyLearningScreen(),
+      MyWishlistScreen.routeName: (context) => const MyWishlistScreen(),
       SettingsScreen.routeName: (context) => const SettingsScreen(),
-      HomeScreen.routeName: (context) => const HomeScreen(),
-      LoginScreen.routeName: (context) => const LoginScreen(),
-      RegisterScreen.routeName: (context) => const RegisterScreen(),
-      ScheduleResourcesScreen.routeName: (context) => const ScheduleResourcesScreen(),
     };
   }
 }
