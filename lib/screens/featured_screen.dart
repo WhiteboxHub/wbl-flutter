@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_educational_app_ui/theme/colors.dart';
-import 'package:flutter_educational_app_ui/widgets/app_bar_widget.dart';
+// import 'package:flutter_educational_app_ui/widgets/app_bar_widget.dart';
 import 'package:flutter_educational_app_ui/widgets/course_card_widget.dart';
 
 class FeaturedScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            AppBarWidget(),
+            // AppBarWidget(),
             HomeBodyWidget(),
           ],
         ),

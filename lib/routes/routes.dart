@@ -1,4 +1,3 @@
-
 // import 'package:flutter_educational_app_ui/screens/course_screen.dart';
 // import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
 // import 'package:flutter_educational_app_ui/screens/forgot_password_screen.dart';
@@ -8,8 +7,6 @@
 // import 'package:flutter_educational_app_ui/screens/welcome_screen.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/settings_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/home_screen.dart';
 
 // class PageRoutes {
 //   Map<String, WidgetBuilder> routes() {
@@ -25,6 +22,8 @@
 //     };
 //   }
 // }
+
+
 import 'package:flutter_educational_app_ui/screens/course_screen.dart';
 import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
 import 'package:flutter_educational_app_ui/screens/forgot_password_screen.dart';
@@ -34,11 +33,9 @@ import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
 import 'package:flutter_educational_app_ui/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
+import 'package:flutter_educational_app_ui/screens/my_learning_screen.dart';
+import 'package:flutter_educational_app_ui/screens/my_wishlist_screen.dart';
 import 'package:flutter_educational_app_ui/screens/settings_screen.dart';
-import 'package:flutter_educational_app_ui/screens/home_screen.dart';
-import 'package:flutter_educational_app_ui/screens/login_screen.dart';
-import 'package:flutter_educational_app_ui/screens/register_screen.dart';
-import 'package:flutter_educational_app_ui/screens/schedule_resources_screen.dart';
 
 class PageRoutes {
   Map<String, WidgetBuilder> routes() {
@@ -51,11 +48,9 @@ class PageRoutes {
       ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
       FeaturedScreen.routeName: (context) => const FeaturedScreen(),
       CourseScreen.routeName: (context) => const CourseScreen(),
+      MyLearningScreen.routeName: (context) => const MyLearningScreen(),
+      MyWishlistScreen.routeName: (context) => const MyWishlistScreen(),
       SettingsScreen.routeName: (context) => const SettingsScreen(),
-      HomeScreen.routeName: (context) => const HomeScreen(),
-      LoginScreen.routeName: (context) => const LoginScreen(),
-      RegisterScreen.routeName: (context) => const RegisterScreen(),
-      ScheduleResourcesScreen.routeName: (context) => const ScheduleResourcesScreen(),
     };
   }
 }
