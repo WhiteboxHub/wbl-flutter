@@ -1,4 +1,4 @@
-# flutter_educational_app_ui
+# wbl_mobile_app
 
 A new Flutter project.
 

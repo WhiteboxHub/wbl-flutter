@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SingleCourseListTileWidget extends StatelessWidget {

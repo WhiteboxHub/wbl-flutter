@@ -1,8 +1,8 @@
-// import 'package:flutter_educational_app_ui/routes/routes.dart';
-// // import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
-// // import 'package:flutter_educational_app_ui/screens/welcome_screen.dart';w
-// import 'package:flutter_educational_app_ui/theme/theme_style.dart';
+// import 'package:wbl_mobile_app/routes/routes.dart';
+// // import 'package:wbl_mobile_app/screens/splash_screen.dart';
+// import 'package:wbl_mobile_app/screens/tab_screen.dart';
+// // import 'package:wbl_mobile_app/screens/welcome_screen.dart';w
+// import 'package:wbl_mobile_app/theme/theme_style.dart';
 // import 'package:flutter/material.dart';
 
 // void main() async {
@@ -54,9 +54,9 @@
 
 
 
- import 'package:flutter_educational_app_ui/routes/routes.dart';
-  import 'package:flutter_educational_app_ui/screens/splash_screen.dart';
-  import 'package:flutter_educational_app_ui/theme/theme_style.dart';
+  import 'package:wbl_mobile_app/routes/routes.dart';
+  import 'package:wbl_mobile_app/screens/splash_screen.dart';
+  import 'package:wbl_mobile_app/theme/theme_style.dart';
   import 'package:flutter/material.dart';
 
   void main() async {

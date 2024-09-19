@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
-// import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
-// import 'package:flutter_educational_app_ui/theme/colors.dart';
-// import 'package:flutter_educational_app_ui/screens/login_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/register_screen.dart';
-// import 'package:flutter_educational_app_ui/screens/schedule_resources_screen.dart';
+// import 'package:wbl_mobile_app/screens/featured_screen.dart';
+// import 'package:wbl_mobile_app/theme/colors.dart';
+// import 'package:wbl_mobile_app/screens/login_screen.dart';
+// import 'package:wbl_mobile_app/screens/register_screen.dart';
+// import 'package:wbl_mobile_app/screens/schedule_resources_screen.dart';
 
 // class TabScreen extends StatefulWidget {
 //   static const routeName = '/tab-screen';
@@ -116,11 +116,11 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/screens/featured_screen.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
-import 'package:flutter_educational_app_ui/screens/my_learning_screen.dart';
-import 'package:flutter_educational_app_ui/screens/my_wishlist_screen.dart';
-import 'package:flutter_educational_app_ui/screens/settings_screen.dart';
+import 'package:wbl_mobile_app/screens/featured_screen.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
+import 'package:wbl_mobile_app/screens/my_learning_screen.dart';
+import 'package:wbl_mobile_app/screens/my_wishlist_screen.dart';
+import 'package:wbl_mobile_app/screens/settings_screen.dart';
 
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab-screen';

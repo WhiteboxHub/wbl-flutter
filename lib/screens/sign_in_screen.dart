@@ -1,8 +1,8 @@
 
-import 'package:flutter_educational_app_ui/screens/forgot_password_screen.dart';
-import 'package:flutter_educational_app_ui/screens/sign_up_screen.dart';
-import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
-import 'package:flutter_educational_app_ui/theme/colors.dart';
+import 'package:wbl_mobile_app/screens/forgot_password_screen.dart';
+import 'package:wbl_mobile_app/screens/sign_up_screen.dart';
+import 'package:wbl_mobile_app/screens/tab_screen.dart';
+import 'package:wbl_mobile_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
