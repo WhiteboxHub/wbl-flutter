@@ -19,7 +19,6 @@
 //     Text('Index 3: Settings'),
 //   ];
 
-
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
@@ -36,7 +35,7 @@
 //         items: const [
 //           BottomNavigationBarItem(
 //             activeIcon: Icon(Icons.home,
-            
+
 //             ),
 //             icon: Icon(Icons.home_outlined),
 //             label: 'Home',
@@ -70,8 +69,6 @@
 //     );
 //   }
 // }
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:wbl_mobile_app/screens/featured_screen.dart';
@@ -170,8 +167,6 @@
 //   }
 // }
 
-
-
 import 'package:flutter/material.dart';
 import 'package:wbl_mobile_app/screens/featured_screen.dart';
 import 'package:wbl_mobile_app/theme/colors.dart';
@@ -191,9 +186,9 @@ class _TabScreenState extends State<TabScreen> {
   int selectedIndex = 0;
   static const List<Widget> tabScreensOptions = <Widget>[
     FeaturedScreen(),
-    
-    // Text('Index 1: Business'),
-    Text('Index 2: School'),
+    Text('Index 1: School'),
+    ScheduleResourcesScreen(),
+    // Text('Index 2: Business'),
     Text('Index 3: Settings'),
   ];
 
@@ -240,6 +235,8 @@ class _TabScreenState extends State<TabScreen> {
         backgroundColor: kGreyWhiteColor,
         unselectedItemColor: kPrimarySwatchColor,
         elevation: 0,
+        showSelectedLabels: false, // Hide selected labels
+        showUnselectedLabels: false, // Hide unselected labels
         items: const [
           BottomNavigationBarItem(
             activeIcon: Icon(Icons.home),
@@ -247,18 +244,18 @@ class _TabScreenState extends State<TabScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.leaderboard),
-            icon: Icon(Icons.leaderboard_outlined),
+            activeIcon: Icon(Icons.library_books),
+            icon: Icon(Icons.library_books_outlined),
             label: 'My Learning',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.list),
-            icon: Icon(Icons.list_outlined),
+            activeIcon: Icon(Icons.info),
+            icon: Icon(Icons.info_outline),
             label: 'My Wishlist',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.settings),
-            icon: Icon(Icons.settings_outlined),
+            activeIcon: Icon(Icons.account_circle),
+            icon: Icon(Icons.account_circle_outlined),
             label: 'Settings',
           ),
         ],
