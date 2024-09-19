@@ -138,10 +138,9 @@ class _TabScreenState extends State<TabScreen> {
     // Text('Index 1: Business'),
     // Text('Index 2: School'),
     // Text('Index 3: Settings'),
-    MyLearningScreen(), 
-    ScheduleResourcesScreen(),         // My Learning screen
-    MyWishlistScreen(),          // My Wishlist screen
-    SettingsScreen(),            // Settings screen
+    MyLearningScreen(),
+    ScheduleResourcesScreen(), // My Learning screen
+    SettingsScreen(), // Settings screen
   ];
 
   @override
@@ -152,7 +151,8 @@ class _TabScreenState extends State<TabScreen> {
         toolbarHeight: kToolbarHeight, // Default app bar height
         automaticallyImplyLeading: false, // Disable default leading icon
         flexibleSpace: Container(
-          padding: const EdgeInsets.only(top: 30, left: 10, right: 20), // Reduced top padding
+          padding: const EdgeInsets.only(
+              top: 30, left: 10, right: 20), // Reduced top padding
           decoration: BoxDecoration(
             // borderRadius: const BorderRadius.only(
             //   bottomLeft: Radius.circular(25),
@@ -162,7 +162,8 @@ class _TabScreenState extends State<TabScreen> {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center, // Ensures items align on the same line
+            crossAxisAlignment: CrossAxisAlignment
+                .center, // Ensures items align on the same line
             children: [
               // No drawer icon, left side empty
               Container(width: 48), // Placeholder width for consistency
