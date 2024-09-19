@@ -33,10 +33,10 @@ import 'package:wbl_mobile_app/screens/sign_up_screen.dart';
 import 'package:wbl_mobile_app/screens/splash_screen.dart';
 import 'package:wbl_mobile_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_educational_app_ui/screens/tab_screen.dart';
-import 'package:flutter_educational_app_ui/screens/my_learning_screen.dart';
-import 'package:flutter_educational_app_ui/screens/my_wishlist_screen.dart';
-import 'package:flutter_educational_app_ui/screens/settings_screen.dart';
+import 'package:wbl_mobile_app/screens/tab_screen.dart';
+import 'package:wbl_mobile_app/screens/my_learning_screen.dart';
+import 'package:wbl_mobile_app/screens/my_wishlist_screen.dart';
+import 'package:wbl_mobile_app/screens/settings_screen.dart';
 
 class PageRoutes {
   Map<String, WidgetBuilder> routes() {

@@ -46,7 +46,8 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:googleapis/calendar/v3.dart' as calendar;  // Ensure correct import
+import 'package:googleapis/calendar/v3.dart'
+    as calendar; // Ensure correct import
 import '../widgets/calendar_widget.dart';
 import '../components/google_calendar_api.dart';
 
@@ -56,7 +57,8 @@ class ScheduleResourcesScreen extends StatefulWidget {
   const ScheduleResourcesScreen({super.key});
 
   @override
-  _ScheduleResourcesScreenState createState() => _ScheduleResourcesScreenState();
+  _ScheduleResourcesScreenState createState() =>
+      _ScheduleResourcesScreenState();
 }
 
 class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
@@ -79,15 +81,15 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top: false,  // Disable the top padding
+      top: false, // Disable the top padding
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Schedule Resources'),
-        ),
-        body: Center(
-          child: CalendarWidget(events: _events),
-        ),
-      ),
+          body: Column(
+        children: [
+          Center(
+            child: CalendarWidget(events: _events),
+          ),
+        ],
+      )),
     );
   }
 }
