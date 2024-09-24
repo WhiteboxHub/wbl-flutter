@@ -78,6 +78,13 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
     });
   }
 
+  String selectedOption = 'Schedule'; // Default selected option
+
+  // Custom colors for button states
+  final Color selectedButtonColor = Colors.purple;
+  final Color unselectedButtonColor = Colors.grey.shade300;
+  final Color selectedTextColor = Colors.white;
+  final Color unselectedTextColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -85,6 +92,63 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
       child: Scaffold(
           body: Column(
         children: [
+          Container(
+            margin: const EdgeInsets.fromLTRB(
+                16.0, 18.0, 16.0, 18.0), // left, top, right, bottom
+            color: Colors
+                .grey.shade200, // Set background color for the button area
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        selectedOption = 'Schedule';
+                      });
+                    },
+                    icon: const Icon(Icons.calendar_month_outlined), // Icon for Schedule
+                    label: Text(
+                      'Schedule',
+                      style: TextStyle(
+                        color: selectedOption == 'Schedule'
+                            ? selectedTextColor
+                            : unselectedTextColor,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: selectedOption == 'Schedule'
+                          ? selectedButtonColor
+                          : unselectedButtonColor,
+                    ),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        selectedOption = 'Course Content';
+                      });
+                    },
+                    icon: const Icon(
+                        Icons.chrome_reader_mode), // Icon for Course Content
+                    label: Text(
+                      'Course Content',
+                      style: TextStyle(
+                        color: selectedOption == 'Course Content'
+                            ? selectedTextColor
+                            : unselectedTextColor,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: selectedOption == 'Course Content'
+                          ? selectedButtonColor
+                          : unselectedButtonColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Center(
             child: CalendarWidget(events: _events),
           ),
