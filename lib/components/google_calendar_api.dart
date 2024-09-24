@@ -58,9 +58,7 @@ class GoogleCalendarApi {
         print(url);
         print('And grant permission, then paste the authorization code here:');
       },
-    );
-
-    // After user has provided consent, fetch events from their Google Calendar
+    );    // After user has provided consent, fetch events from their Google Calendar
     var calendarApi = calendar.CalendarApi(client);
     var events = await calendarApi.events.list('primary');
 

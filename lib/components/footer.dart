@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class Footer extends StatelessWidget {
-  const Footer({super.key});
+// class Footer extends StatelessWidget {
+//   const Footer({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const BottomAppBar(
-      child: Center(
-        child: Text('Footer'),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const BottomAppBar(
+//       child: Center(
+//         child: Text('Footer'),
+//       ),
+//     );
+//   }
+// }

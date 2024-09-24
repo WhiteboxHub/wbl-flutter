@@ -1,7 +1,7 @@
 class Constants {
-  static const String appName = "Bill Reminder";
+  static const String appName = "Wbl_App";
   static const String appVersion = "1.0.0";
-  static const String appAuthor = "Asad Sheikh";
+  static const String appAuthor = "Hemant_Ameer";
 
   static const List<String> dropdownOptions = [
     'Feedback',

@@ -120,8 +120,7 @@ import 'package:wbl_mobile_app/screens/featured_screen.dart';
 import 'package:wbl_mobile_app/screens/schedule_resources_screen.dart';
 import 'package:wbl_mobile_app/theme/colors.dart';
 import 'package:wbl_mobile_app/screens/my_learning_screen.dart';
-import 'package:wbl_mobile_app/screens/my_wishlist_screen.dart';
-import 'package:wbl_mobile_app/screens/settings_screen.dart';
+import 'package:wbl_mobile_app/screens/your_profile_screen.dart';
 
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab-screen';
@@ -140,7 +139,7 @@ class _TabScreenState extends State<TabScreen> {
     // Text('Index 3: Settings'),
     MyLearningScreen(),
     ScheduleResourcesScreen(), // My Learning screen
-    SettingsScreen(), // Settings screen
+    YourProfileScreen()
   ];
 
   @override
@@ -208,19 +207,19 @@ class _TabScreenState extends State<TabScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.library_books),
-            icon: Icon(Icons.library_books_outlined),
+            activeIcon: Icon(Icons.school),
+            icon: Icon(Icons.school_outlined),
             label: 'My Learning',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.info),
-            icon: Icon(Icons.info_outline),
-            label: 'My Wishlist',
+            activeIcon: Icon(Icons.schedule),
+            icon: Icon(Icons.schedule_outlined),
+            label: 'Schedule',
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(Icons.account_circle),
             icon: Icon(Icons.account_circle_outlined),
-            label: 'Settings',
+            label: 'Your Profile',
           ),
         ],
         currentIndex: selectedIndex,
