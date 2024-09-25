@@ -44,12 +44,11 @@
 //     );
 //   }
 // }
-
 import 'package:flutter/material.dart';
-import 'package:googleapis/calendar/v3.dart'
-    as calendar; // Ensure correct import
+import 'package:googleapis/calendar/v3.dart' as calendar;
 import '../widgets/calendar_widget.dart';
 import '../components/google_calendar_api.dart';
+import 'package:wbl_mobile_app/widgets/table_widget.dart'; // Import MyTableWidget
 
 class ScheduleResourcesScreen extends StatefulWidget {
   static const routeName = '/schedule-resources-screen';
@@ -85,75 +84,83 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
   final Color unselectedButtonColor = Colors.grey.shade300;
   final Color selectedTextColor = Colors.white;
   final Color unselectedTextColor = Colors.black;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       top: false, // Disable the top padding
       child: Scaffold(
-          body: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.fromLTRB(
-                16.0, 18.0, 16.0, 18.0), // left, top, right, bottom
-            color: Colors
-                .grey.shade200, // Set background color for the button area
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        selectedOption = 'Schedule';
-                      });
-                    },
-                    icon: const Icon(Icons.calendar_month_outlined), // Icon for Schedule
-                    label: Text(
-                      'Schedule',
-                      style: TextStyle(
-                        color: selectedOption == 'Schedule'
-                            ? selectedTextColor
-                            : unselectedTextColor,
+        body: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.fromLTRB(
+                  16.0, 18.0, 16.0, 18.0), // left, top, right, bottom
+              color: Colors
+                  .grey.shade200, // Set background color for the button area
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        setState(() {
+                          selectedOption = 'Schedule';
+                        });
+                      },
+                      icon: const Icon(
+                          Icons.calendar_month_outlined), // Icon for Schedule
+                      label: Text(
+                        'Schedule',
+                        style: TextStyle(
+                          color: selectedOption == 'Schedule'
+                              ? selectedTextColor
+                              : unselectedTextColor,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: selectedOption == 'Schedule'
+                            ? selectedButtonColor
+                            : unselectedButtonColor,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: selectedOption == 'Schedule'
-                          ? selectedButtonColor
-                          : unselectedButtonColor,
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        selectedOption = 'Course Content';
-                      });
-                    },
-                    icon: const Icon(
-                        Icons.chrome_reader_mode), // Icon for Course Content
-                    label: Text(
-                      'Course Content',
-                      style: TextStyle(
-                        color: selectedOption == 'Course Content'
-                            ? selectedTextColor
-                            : unselectedTextColor,
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        setState(() {
+                          selectedOption = 'Course Content';
+                        });
+                      },
+                      icon: const Icon(
+                          Icons.chrome_reader_mode), // Icon for Course Content
+                      label: Text(
+                        'Course Content',
+                        style: TextStyle(
+                          color: selectedOption == 'Course Content'
+                              ? selectedTextColor
+                              : unselectedTextColor,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: selectedOption == 'Course Content'
+                            ? selectedButtonColor
+                            : unselectedButtonColor,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: selectedOption == 'Course Content'
-                          ? selectedButtonColor
-                          : unselectedButtonColor,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Center(
-            child: CalendarWidget(events: _events),
-          ),
-        ],
-      )),
+            // Conditional rendering of CalendarWidget or MyTableWidget
+            Expanded(
+              child: Center(
+                child: selectedOption == 'Schedule'
+                    ? CalendarWidget(events: _events)
+                    : MyTableWidget(), // Render MyTableWidget when Course Content is selected
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
