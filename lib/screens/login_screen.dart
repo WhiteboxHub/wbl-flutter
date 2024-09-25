@@ -22,8 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
 
   // Use the correct URL for the emulator
-  static const apiUrl = "http://10.0.2.2:8000/api/login"; // for Android emulator
-// static const apiUrl = "http://192.168.0.219:8000/api/login";
+  // static const apiUrl = "http://10.0.2.2:8000/api/login"; // for Android emulator
+static const apiUrl = "http://192.168.0.219:8000/api/login";
 
   Future<void> loginUser() async {
     setState(() {
