@@ -6,7 +6,6 @@ import 'package:wbl_mobile_app/screens/forgot_password_screen .dart';
 import 'package:wbl_mobile_app/screens/tab_screen.dart'; // Assuming you have a TabScreen
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
 
@@ -23,7 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Use the correct URL for the emulator
   // static const apiUrl = "http://10.0.2.2:8000/api/login"; // for Android emulator
-static const apiUrl = "http://192.168.0.219:8000/api/login";
+  static const apiUrl = "https://whitebox-learning.com/api/login";
+  // static const apiUrl = "http://192.168.0.19:8000/api/login"; // for ios emulator
 
   Future<void> loginUser() async {
     setState(() {
@@ -33,7 +33,9 @@ static const apiUrl = "http://192.168.0.219:8000/api/login";
     try {
       final response = await http.post(
         Uri.parse(apiUrl),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}, // Correct content type
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }, // Correct content type
         body: {
           'grant_type': 'password',
           'username': emailController.text, // 'admin' in your case
@@ -110,7 +112,7 @@ static const apiUrl = "http://192.168.0.219:8000/api/login";
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 126, 22, 245), 
+                    color: const Color.fromARGB(255, 126, 22, 245),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -197,8 +199,8 @@ static const apiUrl = "http://192.168.0.219:8000/api/login";
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.transparent,
                         ),
-                        child:
-                            const Text('Register', style: TextStyle(color: Colors.teal)),
+                        child: const Text('Register',
+                            style: TextStyle(color: Colors.teal)),
                       ),
                     ],
                   ),

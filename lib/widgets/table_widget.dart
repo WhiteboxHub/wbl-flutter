@@ -5,12 +5,12 @@ class MyTableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 16.0), // Add horizontal padding
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical, // Enable vertical scrolling
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0), // Add horizontal padding
         child: Table(
-          border:
-              TableBorder.all(color: Colors.black, width: 1), // Table border
+          border: TableBorder.all(color: Colors.black, width: 1), // Table border
           children: [
             // Header Row
             const TableRow(
@@ -70,12 +70,7 @@ class MyTableWidget extends StatelessWidget {
             ),
             // First Data Row
             _buildStyledRow(
-              [
-                'Software Architecture',
-                'Python',
-                'HTML and HTML5',
-                'Testing Concepts'
-              ],
+              ['Software Architecture', 'Python', 'HTML and HTML5', 'Testing Concepts'],
               Colors.grey.shade100, // Row background color
             ),
             // Second Data Row
@@ -84,52 +79,27 @@ class MyTableWidget extends StatelessWidget {
               Colors.white, // Alternate row background color
             ),
             _buildStyledRow(
-              [
-                'JIRA Agile',
-                'Data Plotting',
-                'DOM & jQuery',
-                'Java Programming'
-              ],
+              ['JIRA Agile', 'Data Plotting', 'DOM & jQuery', 'Java Programming'],
               Colors.grey.shade100,
             ),
             _buildStyledRow(
-              ['UNIX', 'Essential for maths for ML', 'Tailwind CSS', 'Cypress'],
+              ['UNIX', 'Essential maths for ML', 'Tailwind CSS', 'Cypress'],
               Colors.white,
             ),
             _buildStyledRow(
-              [
-                'HTTP',
-                'ML-supervised learning algorithms',
-                'React',
-                'Puppeteer'
-              ],
+              ['HTTP', 'ML-supervised learning algorithms', 'React', 'Puppeteer'],
               Colors.grey.shade100,
             ),
             _buildStyledRow(
-              [
-                'Web Services',
-                'Unsupervised learning algorithms',
-                'Next.js',
-                'Locust/JMeter'
-              ],
+              ['Web Services', 'Unsupervised learning algorithms', 'Next.js', 'Locust/JMeter'],
               Colors.white,
             ),
             _buildStyledRow(
-              [
-                'REST API, Micro services',
-                'Reinforcement learning',
-                'Express.js',
-                'Appium'
-              ],
+              ['REST API, Microservices', 'Reinforcement learning', 'Express.js', 'Appium'],
               Colors.grey.shade100,
             ),
             _buildStyledRow(
-              [
-                'Containers – Docker',
-                'Neural network',
-                'Node.js',
-                'Karate Framework'
-              ],
+              ['Containers – Docker', 'Neural network', 'Node.js', 'Karate Framework'],
               Colors.white,
             ),
             _buildStyledRow(
@@ -137,12 +107,7 @@ class MyTableWidget extends StatelessWidget {
               Colors.grey.shade100,
             ),
             _buildStyledRow(
-              [
-                'Git + Github + Jenkins',
-                'Natural language processing (NLP)',
-                'GraphQL',
-                'Playwright'
-              ],
+              ['Git + Github + Jenkins', 'Natural language processing (NLP)', 'GraphQL', 'Playwright'],
               Colors.white,
             ),
             _buildStyledRow(
@@ -150,12 +115,7 @@ class MyTableWidget extends StatelessWidget {
               Colors.grey.shade100,
             ),
             _buildStyledRow(
-              [
-                'AWS – EC2, EKS, S3',
-                'Computer Vision',
-                'React Native',
-                'XPath'
-              ],
+              ['AWS – EC2, EKS, S3', 'Computer Vision', 'React Native', 'XPath'],
               Colors.white,
             ),
             _buildStyledRow(
@@ -163,7 +123,9 @@ class MyTableWidget extends StatelessWidget {
               Colors.grey.shade100,
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
   TableRow _buildStyledRow(List<String> data, Color bgColor) {
