@@ -28,6 +28,7 @@ dependencies:
   shared_preferences: ^2.0.8
   youtube_player_flutter: ^9.1.0
   url_launcher: ^6.0.17
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

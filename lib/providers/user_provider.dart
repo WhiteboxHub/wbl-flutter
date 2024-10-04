@@ -50,16 +50,17 @@ import '../models/user_model.dart';
 
 class UserProvider with ChangeNotifier {
   UserModel? _user;
-  String _selectedCourse = 'Machine Learning - ML'; // Default course
+  String _selectedCourse = 'ML'; // Default course
 
   UserModel? get user => _user;
   String get selectedCourse => _selectedCourse; // Getter for selected course
 
-  // Other existing methods...
-
-  void changeCourse(String course) {
+  void changeCourse(String course) async {
     _selectedCourse = course;
     notifyListeners();
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selected_course', _selectedCourse); // Save abbreviation
   }
 
   Future<void> autoLogin() async {
@@ -68,7 +69,7 @@ class UserProvider with ChangeNotifier {
       String? username = prefs.getString('username');
       String? email = prefs.getString('email');
       // Load selected course from shared preferences
-      _selectedCourse = prefs.getString('selected_course') ?? 'Machine Learning - ML';
+      _selectedCourse = prefs.getString('selected_course') ?? 'ML'; // Default to 'ML'
 
       if (username != null && email != null) {
         _user = UserModel(username: username, email: email);

@@ -5,7 +5,6 @@
 // import '../providers/user_provider.dart'; // Ensure this is the correct path to your UserProvider
 // import './login_screen.dart'; // Ensure this is the correct path to your LoginScreen
 
-
 // class YourProfileScreen extends StatelessWidget {
 //   static const routeName = '/your-profile';
 
@@ -15,14 +14,14 @@
 //   Widget build(BuildContext context) {
 //      final userProvider = Provider.of<UserProvider>(context);
 //     final user = userProvider.user;
-//     return Scaffold(          
+//     return Scaffold(
 //       body: Padding(
 //         padding: const EdgeInsets.all(16.0),
 //         child: Column(
 //           crossAxisAlignment: CrossAxisAlignment.center,
 //           children: [
 //             CircleAvatar(
-//               radius: 50,   
+//               radius: 50,
 //                 backgroundImage: AssetImage('assets/images/profile_icon.jpg'),
 //             ),
 //             SizedBox(height: 10),
@@ -79,11 +78,10 @@
 //             ),
 //           ],
 //         ),
-//       ),    
+//       ),
 //     );
 //   }
 // }
-
 
 // import 'package:flutter/material.dart';
 // import 'package:wbl_mobile_app/screens/change_password_screen.dart'; // Import the Change Password screen
@@ -239,7 +237,7 @@ class YourProfileScreen extends StatelessWidget {
                         children: [
                           RadioListTile<String>(
                             title: Text('Machine Learning - ML'),
-                            value: 'Machine Learning - ML',
+                            value: 'ML', // Store abbreviation
                             groupValue: userProvider.selectedCourse,
                             onChanged: (value) {
                               userProvider.changeCourse(value!);
@@ -248,7 +246,7 @@ class YourProfileScreen extends StatelessWidget {
                           ),
                           RadioListTile<String>(
                             title: Text('Fullstack - UI'),
-                            value: 'Fullstack - UI',
+                            value: 'UI', // Store abbreviation
                             groupValue: userProvider.selectedCourse,
                             onChanged: (value) {
                               userProvider.changeCourse(value!);
@@ -257,7 +255,7 @@ class YourProfileScreen extends StatelessWidget {
                           ),
                           RadioListTile<String>(
                             title: Text('Quality Engineering - QE'),
-                            value: 'Quality Engineering - QE',
+                            value: 'QA', // Store abbreviation
                             groupValue: userProvider.selectedCourse,
                             onChanged: (value) {
                               userProvider.changeCourse(value!);
