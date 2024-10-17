@@ -96,7 +96,7 @@
 // ----------------------------------------above code is without login ---------------------------------------------------
 
 
-
+// wbl_flutter_new\lib\main.dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wbl_mobile_app/routes/routes.dart';
@@ -125,8 +125,9 @@ class MyApp extends StatelessWidget {
 
   Future<Widget> _checkAutoLogin() async {
     final prefs = await SharedPreferences.getInstance();
-    final accessToken = prefs.getString('access_token');
-
+    final accessToken = prefs.getString('access_token');    
+    print('-----------------Access Token: $accessToken'); // Print the access token
+print('----------------------------------------------------------------');
     if (accessToken != null && accessToken.isNotEmpty) {
       return const TabScreen();
     } else {
@@ -140,11 +141,15 @@ class MyApp extends StatelessWidget {
       future: _checkAutoLogin(),
       builder: (BuildContext context, AsyncSnapshot<Widget> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
+                   print('--------------Waiting for authentication check...'); // Print while waiting
+
           return const MaterialApp(
             home: SplashScreen(),
             debugShowCheckedModeBanner: false,
           );
         } else {
+                    print('----------------Authentication check complete.'); // Print when done
+
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Whitebox-Learning',

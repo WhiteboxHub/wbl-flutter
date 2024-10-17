@@ -30,7 +30,7 @@
 // }
 
 
-
+// wbl_flutter_new\lib\routes\routes.dart 
 import 'package:flutter/material.dart';
 import 'package:wbl_mobile_app/screens/login_screen.dart';
 import 'package:wbl_mobile_app/screens/register_screen.dart'; // Updated import
@@ -44,6 +44,7 @@ import 'package:wbl_mobile_app/screens/my_wishlist_screen.dart';
 import 'package:wbl_mobile_app/screens/your_profile_screen.dart';
 import 'package:wbl_mobile_app/screens/change_password_screen.dart';
 import 'package:wbl_mobile_app/screens/edit_profile_screen.dart';
+import 'package:wbl_mobile_app/screens/contact_us_screen.dart'; // Import the Contact Us screen
 
 class PageRoutes {
   Map<String, WidgetBuilder> routes() {
@@ -61,6 +62,7 @@ class PageRoutes {
       YourProfileScreen.routeName: (ctx) => const YourProfileScreen(),
       ChangePasswordScreen.routeName: (ctx) => const ChangePasswordScreen(),
       EditProfileScreen.routeName: (ctx) =>const EditProfileScreen(),
+      ContactUsScreen.routeName: (ctx) => const ContactUsScreen(), // Added Contact Us Screen route
 
     };
   }

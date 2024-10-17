@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Use the correct URL for the emulator
   // static const apiUrl = "http://10.0.2.2:8000/api/login"; // for Android emulator
+  // static const apiUrl = "http://localhost:8000/api/login"; // for Android emulator
   static const apiUrl = "https://whitebox-learning.com/api/login";
   // static const apiUrl = "http://192.168.0.19:8000/api/login"; // for ios emulator
 
