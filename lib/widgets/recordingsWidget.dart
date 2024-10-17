@@ -19,6 +19,7 @@ class RecordingsWidget extends StatefulWidget {
   @override
   _RecordingsWidgetState createState() => _RecordingsWidgetState();
 }
+
 class _RecordingsWidgetState extends State<RecordingsWidget> {
   List<Map<String, String>> filteredRecordings = [];
   bool isLoading = true;
@@ -181,15 +182,19 @@ class _RecordingsWidgetState extends State<RecordingsWidget> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          recording['title']!,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14.0,
+                        // Wrap the Text in an Expanded widget to handle long titles.
+                        Expanded(
+                          child: Text(
+                            recording['title']!,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.0,
+                            ),
+                            overflow: TextOverflow
+                                .ellipsis, // Prevent overflow by truncating text
+                            maxLines: 2,
                           ),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
                         ),
                         const SizedBox(height: 5),
                         Row(
