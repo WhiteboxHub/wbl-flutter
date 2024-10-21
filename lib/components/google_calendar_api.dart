@@ -38,10 +38,8 @@
 // }
 
 
-import 'dart:io';
 import 'package:googleapis/calendar/v3.dart' as calendar;
 import 'package:googleapis_auth/auth_io.dart';
-import 'package:http/http.dart' as http;
 
 class GoogleCalendarApi {
   final _clientId = 'YOUR_CLIENT_ID';

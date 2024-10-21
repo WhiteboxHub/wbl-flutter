@@ -1,54 +1,69 @@
-// // wbl_flutter_new\lib\widgets\profile_picture.dart
 // import 'package:flutter/material.dart';
-// import 'dart:io';  // <-- Import this to use File
+// import 'dart:io';
 
 // class ProfilePicture extends StatelessWidget {
-//   final String? imagePath;
-//   final String username;
+//   final String? imagePath;  // Nullable image path for profile picture
+//   final String username;    // Non-nullable username
 
-//   const ProfilePicture({Key? key, this.imagePath, required this.username}) : super(key: key);
+//   const ProfilePicture({super.key, this.imagePath, required this.username});
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return CircleAvatar(
 //       radius: 50,
-//       backgroundColor: Colors.blueGrey,
-//       backgroundImage: imagePath != null ? FileImage(File(imagePath!)) : null,
-//       child: imagePath == null
+//       backgroundColor:  Color.fromARGB(255, 175, 134, 223),
+//       backgroundImage: imagePath != null && imagePath!.isNotEmpty  // Check if imagePath exists and is non-empty
+//           ? FileImage(File(imagePath!)) 
+//           : null,  // No imagePath provided
+//       child: imagePath == null || imagePath!.isEmpty  // If no profile picture, show the first letter of the username
 //           ? Text(
-//               username.isNotEmpty ? username[0].toUpperCase() : '?',
-//               style: TextStyle(fontSize: 40, color: Colors.white),
+//               username.isNotEmpty ? username[0].toUpperCase() : '?',  // First letter of username or fallback '?'
+//               style: const TextStyle(fontSize: 40, color: Colors.teal),
 //             )
-//           : null,
+//           : null,  // Do not display text if image is available
 //     );
 //   }
 // }
-
-
 
 import 'package:flutter/material.dart';
 import 'dart:io';
 
 class ProfilePicture extends StatelessWidget {
-  final String? imagePath;  // Nullable image path for profile picture
+  final String? imagePath; // Nullable image path for profile picture
   final String username;    // Non-nullable username
 
-  const ProfilePicture({Key? key, this.imagePath, required this.username}) : super(key: key);
+  const ProfilePicture({super.key, this.imagePath, required this.username});
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 50,
-      backgroundColor: Colors.blueGrey,
-      backgroundImage: imagePath != null && imagePath!.isNotEmpty  // Check if imagePath exists and is non-empty
-          ? FileImage(File(imagePath!)) 
-          : null,  // No imagePath provided
-      child: imagePath == null || imagePath!.isEmpty  // If no profile picture, show the first letter of the username
-          ? Text(
-              username.isNotEmpty ? username[0].toUpperCase() : '?',  // First letter of username or fallback '?'
-              style: const TextStyle(fontSize: 40, color: Colors.white),
-            )
-          : null,  // Do not display text if image is available
+    return Container(
+      width: 100, // Set a width for the container
+      height: 100, // Set a height for the container
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient( // Use a gradient
+          colors: [
+            Color.fromARGB(255, 118, 248, 187), // First color
+            Color.fromARGB(255, 184, 238, 213), // First color
+            // Color.fromARGB(255, 252, 10, 10), // Second color
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: CircleAvatar(
+        radius: 50,
+        backgroundColor: Colors.transparent, // Make background transparent
+        backgroundImage: imagePath != null && imagePath!.isNotEmpty // Check if imagePath exists and is non-empty
+            ? FileImage(File(imagePath!))
+            : null, // No imagePath provided
+        child: imagePath == null || imagePath!.isEmpty // If no profile picture, show the first letter of the username
+            ? Text(
+                username.isNotEmpty ? username[0].toUpperCase() : '?', // First letter of username or fallback '?'
+                style: const TextStyle(fontSize: 40, color: Color.fromARGB(255, 161, 127, 255)),
+              )
+            : null, // Do not display text if image is available
+      ),
     );
   }
 }

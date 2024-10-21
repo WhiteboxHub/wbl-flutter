@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 // import '../components/custom_app_bar.dart'; // Import the custom app bar
-import '../components/custom_carousel.dart'; // Import the custom carousel
+// Import the custom carousel
 import '../components/course_section.dart'; // Import the course section
 import '../components/enroll_button.dart'; // Import the enroll button
 

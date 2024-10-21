@@ -104,7 +104,6 @@ import 'package:wbl_mobile_app/screens/splash_screen.dart';
 import 'package:wbl_mobile_app/screens/tab_screen.dart';
 import 'package:wbl_mobile_app/screens/login_screen.dart';
 import 'package:wbl_mobile_app/theme/theme_style.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_provider.dart';
 import 'screens/your_profile_screen.dart'; // Added for routing

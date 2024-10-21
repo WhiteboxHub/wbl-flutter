@@ -237,7 +237,7 @@ import 'resources_table.dart';
 class PresentationWidget extends StatefulWidget {
   final String course;
 
-  const PresentationWidget({Key? key, required this.course}) : super(key: key);
+  const PresentationWidget({super.key, required this.course});
 
   @override
   _PresentationWidgetState createState() => _PresentationWidgetState();

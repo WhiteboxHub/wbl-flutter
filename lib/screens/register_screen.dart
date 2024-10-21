@@ -25,26 +25,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center, // Center the content
             children: [
-  SizedBox(height: 50),
+  const SizedBox(height: 50),
             CircleAvatar(
               radius: 50,
               child: Image.asset(
                   'assets/signup_image.png'), // Replace with your asset
             ),
-              Text(
+              const Text(
                 'Create your account',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                   color: const Color.fromARGB(255, 126, 22, 245),                   
+                   color: Color.fromARGB(255, 126, 22, 245),                   
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
+              const Text(
                 'Welcome. We exist to make learning easier.',
                 style: TextStyle(
                   fontSize: 18,
-                   color: const Color.fromARGB(255, 107, 75, 253),
+                   color: Color.fromARGB(255, 107, 75, 253),
                 ),
               ),
               const SizedBox(height: 32),
@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.person, color: Colors.teal),
+                  prefixIcon: const Icon(Icons.person, color: Colors.teal),
                 ),
               ),
               const SizedBox(height: 16),
@@ -71,7 +71,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        prefixIcon: Icon(Icons.flag, color: Colors.teal),
+                        prefixIcon: const Icon(Icons.flag, color: Colors.teal),
                       ),
                     ),
                   ),
@@ -85,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        prefixIcon: Icon(Icons.phone, color: Colors.teal),
+                        prefixIcon: const Icon(Icons.phone, color: Colors.teal),
                       ),
                     ),
                   ),
@@ -100,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.email, color: Colors.teal),
+                  prefixIcon: const Icon(Icons.email, color: Colors.teal),
                 ),
               ),
               const SizedBox(height: 16),
@@ -112,7 +112,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.lock, color: Colors.teal),
+                  prefixIcon: const Icon(Icons.lock, color: Colors.teal),
                 ),
                 obscureText: true,
               ),
@@ -125,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.home, color: Colors.teal),
+                  prefixIcon: const Icon(Icons.home, color: Colors.teal),
                 ),
               ),
               const SizedBox(height: 16),
@@ -137,7 +137,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.pin_drop, color: Colors.teal),
+                  prefixIcon: const Icon(Icons.pin_drop, color: Colors.teal),
                 ),
               ),
               const SizedBox(height: 16),
@@ -178,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
-                  child: Text('Register', style: TextStyle(color: Colors.white)),
+                  child: const Text('Register', style: TextStyle(color: Colors.white)),
                 ),
               ),
               const SizedBox(height: 16),
@@ -186,7 +186,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already have an account?"),
+                    const Text("Already have an account?"),
                     TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, LoginScreen.routeName);
@@ -194,7 +194,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.transparent,
                       ),
-                      child: Text('Login', style: TextStyle(color: Colors.teal)),
+                      child: const Text('Login', style: TextStyle(color: Colors.teal)),
                     ),
                   ],
                 ),

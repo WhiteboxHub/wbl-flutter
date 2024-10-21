@@ -62,11 +62,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                   padding: const EdgeInsets.only(left: 10.0),
                   child: Text(
                     "Contact Us",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFF6B4BFD),
-                    ),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: const Color.fromARGB(255, 107, 75, 253),
+                                  fontWeight: FontWeight.bold,
+                                ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -79,11 +78,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16.0),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 8.0,
-                          offset: const Offset(0, 2),
+                          offset: Offset(0, 2),
                         ),
                       ],
                     ),
@@ -91,9 +90,9 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       // Form Title
-        Center( // Wrap the title in Center to align it in the middle
+        const Center( // Wrap the title in Center to align it in the middle
           child: Column(
-            children: const [
+            children: [
               Text(
                 "Get in touch!",
                 style: TextStyle(
@@ -245,17 +244,17 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     decoration: BoxDecoration(
                       color: const Color(0xFFF1F1F1),
                       borderRadius: BorderRadius.circular(16.0),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 8.0,
-                          offset: const Offset(0, 2),
+                          offset: Offset(0, 2),
                         ),
                       ],
                     ),
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           "Contact Details",
                           style: TextStyle(

@@ -5,7 +5,7 @@ import 'package:googleapis/calendar/v3.dart' as calendar;
 class CalendarWidget extends StatefulWidget {
   final List<calendar.Event> events;
 
-  const CalendarWidget({Key? key, required this.events}) : super(key: key);
+  const CalendarWidget({super.key, required this.events});
 
   @override
   _CalendarWidgetState createState() => _CalendarWidgetState();

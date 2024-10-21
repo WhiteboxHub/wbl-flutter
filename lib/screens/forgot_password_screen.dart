@@ -84,7 +84,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 16), // Padding inside the button
                 ),
-                child: Text('Forgot Password', style: TextStyle(color: Colors.white)),
+                child: const Text('Forgot Password', style: TextStyle(color: Colors.white)),
               ),
             ),
                           Center(
@@ -96,7 +96,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.transparent,
                               ),
-                              child: Text(
+                              child: const Text(
                                 'Go back to login',
                                 style: TextStyle(
                                   // color: Colors.blueGrey,

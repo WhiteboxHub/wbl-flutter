@@ -36,7 +36,7 @@ import 'package:wbl_mobile_app/screens/login_screen.dart';
 import 'package:wbl_mobile_app/screens/register_screen.dart'; // Updated import
 import 'package:wbl_mobile_app/screens/course_screen.dart';
 import 'package:wbl_mobile_app/screens/featured_screen.dart';
-import 'package:wbl_mobile_app/screens/forgot_password_screen .dart';
+import 'package:wbl_mobile_app/screens/forgot_password_screen.dart';
 import 'package:wbl_mobile_app/screens/splash_screen.dart';
 import 'package:wbl_mobile_app/screens/tab_screen.dart';
 import 'package:wbl_mobile_app/screens/my_learning_screen.dart';

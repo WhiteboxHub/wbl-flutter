@@ -1,4 +1,3 @@
-
 // wbl_flutter_new\lib\screens\your_profile_screen.dart
 import 'package:flutter/material.dart';
 import 'package:wbl_mobile_app/screens/change_password_screen.dart'; // Import the Change Password screen
@@ -17,10 +16,12 @@ class YourProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
+    
     final user = userProvider.user;
 
-print('----------------------User : ${user}'); // Add this
-print('----------------------User in Profile Screen: ${user?.username}'); // Add this
+    // print('----------------------userProvider: ${userProvider}'); // Add this
+    // print('----------------------User : ${user}'); // Add this
+    // print('----------------------User in Profile Screen: ${user?.username}'); // Add this
 
     return Scaffold(
       body: Padding(
@@ -28,18 +29,6 @@ print('----------------------User in Profile Screen: ${user?.username}'); // Add
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // CircleAvatar(
-            //   radius: 50,
-            //   backgroundImage: AssetImage('assets/images/profile_icon.jpg'),
-            // ),
-            // SizedBox(height: 10),
-            // Text(
-            //   user != null ? 'Welcome, ${user.username}' : 'Welcome, User',
-            //   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            // ),
-            // SizedBox(height: 20),
-
-// Use the ProfilePicture widget
             ProfilePicture(
               imagePath: user?.profilePicture,  // Use profile picture from user model
               username: user?.username ?? 'User',  // Fallback to 'User' if username is null
@@ -138,7 +127,8 @@ print('----------------------User in Profile Screen: ${user?.username}'); // Add
                 Navigator.pushNamed(context, ChangePasswordScreen.routeName);
               },
             ),
-             // Contact Us
+
+            // Contact Us
             ListTile(
               leading: Icon(Icons.contact_mail), // Changed the icon
               title: Text('Contact Us'),
@@ -155,8 +145,8 @@ print('----------------------User in Profile Screen: ${user?.username}'); // Add
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
                 // Implementing the logout functionality
-                userProvider.logout();
-                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                userProvider.logout(); // Call the logout method to clear the token
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName); // Navigate to LoginScreen
               },
             ),
           ],

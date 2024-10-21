@@ -42,8 +42,7 @@ class ResourcesTable extends StatefulWidget {
   final String course;
   final ComponentType type;
 
-  const ResourcesTable({Key? key, required this.course, required this.type})
-      : super(key: key);
+  const ResourcesTable({super.key, required this.course, required this.type});
 
   @override
   _ResourcesTableState createState() => _ResourcesTableState();
@@ -87,17 +86,17 @@ class _ResourcesTableState extends State<ResourcesTable> {
       future: dataFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
 
         if (snapshot.hasError) {
           return Center(
               child: Text('Error: ${snapshot.error}',
-                  style: TextStyle(color: Colors.red)));
+                  style: const TextStyle(color: Colors.red)));
         }
 
         if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Center(child: Text("No data to display"));
+          return const Center(child: Text("No data to display"));
         }
 
         final data = snapshot.data!;
@@ -123,9 +122,9 @@ class _ResourcesTableState extends State<ResourcesTable> {
                   columns: [
                     DataColumn(
                       label: Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         color: Colors.blue.shade700,
-                        child: Text(
+                        child: const Text(
                           "Serial No.",
                           style: TextStyle(
                             color: Colors.white,
@@ -136,9 +135,9 @@ class _ResourcesTableState extends State<ResourcesTable> {
                     ),
                     DataColumn(
                       label: Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         color: Colors.blue.shade700,
-                        child: Text(
+                        child: const Text(
                           "Subject Name",
                           style: TextStyle(
                             color: Colors.white,
@@ -152,9 +151,9 @@ class _ResourcesTableState extends State<ResourcesTable> {
                     final subject = data[index];
 
                     return DataRow(
-                      color: MaterialStateProperty.resolveWith<Color?>(
-                        (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.hovered)) {
+                      color: WidgetStateProperty.resolveWith<Color?>(
+                        (Set<WidgetState> states) {
+                          if (states.contains(WidgetState.hovered)) {
                             return Colors.blue.shade50;
                           }
                           return index.isEven
@@ -178,7 +177,7 @@ class _ResourcesTableState extends State<ResourcesTable> {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 subject['name'],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.blue,
                                   decoration: TextDecoration.underline,
                                 ),

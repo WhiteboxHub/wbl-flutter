@@ -163,7 +163,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wbl_mobile_app/widgets/presentationWidget.dart';
 import 'package:wbl_mobile_app/widgets/recordingsWidget.dart';
-import 'package:wbl_mobile_app/widgets/othersWidget.dart';
 import '../providers/user_provider.dart';
 
 class MyLearningScreen extends StatefulWidget {

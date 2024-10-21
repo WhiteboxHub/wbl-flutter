@@ -155,7 +155,7 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
               child: Center(
                 child: selectedOption == 'Schedule'
                     ? CalendarWidget(events: _events)
-                    : MyTableWidget(), // Render MyTableWidget when Course Content is selected
+                    : const MyTableWidget(), // Render MyTableWidget when Course Content is selected
               ),
             ),
           ],

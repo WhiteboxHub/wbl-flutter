@@ -1,11 +1,13 @@
+// wbl_flutter_new\lib\screens\login_screen.dart
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:wbl_mobile_app/screens/register_screen.dart';
-import 'package:wbl_mobile_app/screens/forgot_password_screen .dart';
+import 'package:wbl_mobile_app/screens/forgot_password_screen.dart';
 import 'package:wbl_mobile_app/screens/tab_screen.dart'; // Assuming you have a TabScreen
 import 'package:shared_preferences/shared_preferences.dart';
-
+ import 'package:provider/provider.dart';  // Add provider import
+import '../providers/user_provider.dart';  // Import UserProvider
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
 
@@ -54,6 +56,14 @@ class _LoginScreenState extends State<LoginScreen> {
           // Save token in shared preferences for auto-login
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString('access_token', data['access_token']);
+
+          await prefs.setString('access_token', data['access_token']);
+          await prefs.setString('username', emailController.text);  // Save the username
+          await prefs.setBool('isLoggedIn', true);
+
+          // Fetch the user details in the provider
+          final userProvider = Provider.of<UserProvider>(context, listen: false);
+          await userProvider.fetchUserData(); // Load the user data after logging in
 
           // Token received, navigate to the TabScreen
           Navigator.pushReplacementNamed(context, TabScreen.routeName);

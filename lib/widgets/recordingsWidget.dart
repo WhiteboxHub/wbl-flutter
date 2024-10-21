@@ -10,11 +10,11 @@ class RecordingsWidget extends StatefulWidget {
   final String selectedCourse;
 
   const RecordingsWidget({
-    Key? key,
+    super.key,
     required this.searchQuery,
     required this.apiUrl,
     required this.selectedCourse,
-  }) : super(key: key);
+  });
 
   @override
   _RecordingsWidgetState createState() => _RecordingsWidgetState();
@@ -94,7 +94,7 @@ class _RecordingsWidgetState extends State<RecordingsWidget> {
         padding: const EdgeInsets.all(16.0),
         itemCount: 6, // Show 6 placeholders while loading
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: 1,
           crossAxisSpacing: 16.0,
           mainAxisSpacing: 16.0,
           childAspectRatio: 16 / 9,
@@ -119,9 +119,9 @@ class _RecordingsWidgetState extends State<RecordingsWidget> {
         itemCount: filteredRecordings.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 16.0,
-          mainAxisSpacing: 16.0,
-          childAspectRatio: 16 / 9,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 8 / 5,
         ),
         itemBuilder: (context, index) {
           final recording = filteredRecordings[index];
