@@ -1,3 +1,4 @@
+// // wbl_flutter_new\lib\screens\change_password_screen.dart
 // import 'package:flutter/material.dart';
 // import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 // import 'package:wbl_mobile_app/screens/login_screen.dart';
@@ -13,13 +14,18 @@
 
 // class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 //   final formKey = GlobalKey<FormState>();
-//   final TextEditingController passwordController = TextEditingController();
+//   final TextEditingController currentPasswordController = TextEditingController();
+//   final TextEditingController newPasswordController = TextEditingController();
 //   final TextEditingController confirmPasswordController = TextEditingController();
 //   bool showSpinner = false;
+//   bool isCurrentPasswordVisible = false;
+//   bool isNewPasswordVisible = false;
+//   bool isConfirmPasswordVisible = false;
 
 //   @override
 //   void dispose() {
-//     passwordController.dispose();
+//     currentPasswordController.dispose();
+//     newPasswordController.dispose();
 //     confirmPasswordController.dispose();
 //     formKey.currentState?.dispose();
 //     super.dispose();
@@ -50,7 +56,7 @@
 //           body: SafeArea(
 //             child: Column(
 //               children: [
-//               // Back button with icon
+//                 // Back button with icon
 //                 Padding(
 //                   padding: const EdgeInsets.only(top: 16.0), // Add space from the top
 //                   child: Row(
@@ -82,18 +88,32 @@
 //                                 ),
 //                           ),
 //                           const SizedBox(height: 40),
+//                           // Current Password Field
 //                           TextFormField(
-//                             controller: passwordController,
+//                             controller: currentPasswordController,
 //                             decoration: InputDecoration(
 //                               labelText: 'Current Password *',
 //                               border: OutlineInputBorder(
 //                                 borderRadius: BorderRadius.circular(30),
 //                               ),
 //                               filled: true,
-//                               fillColor: Colors.transparent, // Transparent background
+//                               fillColor: Colors.transparent,
 //                               prefixIcon: const Icon(Icons.lock, color: Colors.teal),
+//                               suffixIcon: IconButton(
+//                                 icon: Icon(
+//                                   isCurrentPasswordVisible
+//                                       ? Icons.visibility
+//                                       : Icons.visibility_off,
+//                                   color: Colors.teal,
+//                                 ),
+//                                 onPressed: () {
+//                                   setState(() {
+//                                     isCurrentPasswordVisible = !isCurrentPasswordVisible;
+//                                   });
+//                                 },
+//                               ),
 //                             ),
-//                             obscureText: true,
+//                             obscureText: !isCurrentPasswordVisible,
 //                             validator: (value) {
 //                               if (value == null || value.isEmpty) {
 //                                 return 'Please enter your current password';
@@ -102,18 +122,32 @@
 //                             },
 //                           ),
 //                           const SizedBox(height: 16), // Space between inputs
+//                           // New Password Field
 //                           TextFormField(
-//                             controller: passwordController,
+//                             controller: newPasswordController,
 //                             decoration: InputDecoration(
 //                               labelText: 'New Password *',
 //                               border: OutlineInputBorder(
 //                                 borderRadius: BorderRadius.circular(30),
 //                               ),
 //                               filled: true,
-//                               fillColor: Colors.transparent, // Transparent background
+//                               fillColor: Colors.transparent,
 //                               prefixIcon: const Icon(Icons.lock, color: Colors.teal),
+//                               suffixIcon: IconButton(
+//                                 icon: Icon(
+//                                   isNewPasswordVisible
+//                                       ? Icons.visibility
+//                                       : Icons.visibility_off,
+//                                   color: Colors.teal,
+//                                 ),
+//                                 onPressed: () {
+//                                   setState(() {
+//                                     isNewPasswordVisible = !isNewPasswordVisible;
+//                                   });
+//                                 },
+//                               ),
 //                             ),
-//                             obscureText: true,
+//                             obscureText: !isNewPasswordVisible,
 //                             validator: (value) {
 //                               if (value == null || value.isEmpty) {
 //                                 return 'Please enter a new password';
@@ -122,6 +156,7 @@
 //                             },
 //                           ),
 //                           const SizedBox(height: 16),
+//                           // Confirm Password Field
 //                           TextFormField(
 //                             controller: confirmPasswordController,
 //                             decoration: InputDecoration(
@@ -130,15 +165,28 @@
 //                                 borderRadius: BorderRadius.circular(30),
 //                               ),
 //                               filled: true,
-//                               fillColor: Colors.transparent, // Transparent background
+//                               fillColor: Colors.transparent,
 //                               prefixIcon: const Icon(Icons.lock, color: Colors.teal),
+//                               suffixIcon: IconButton(
+//                                 icon: Icon(
+//                                   isConfirmPasswordVisible
+//                                       ? Icons.visibility
+//                                       : Icons.visibility_off,
+//                                   color: Colors.teal,
+//                                 ),
+//                                 onPressed: () {
+//                                   setState(() {
+//                                     isConfirmPasswordVisible = !isConfirmPasswordVisible;
+//                                   });
+//                                 },
+//                               ),
 //                             ),
-//                             obscureText: true,
+//                             obscureText: !isConfirmPasswordVisible,
 //                             validator: (value) {
 //                               if (value == null || value.isEmpty) {
 //                                 return 'Please confirm your password';
 //                               }
-//                               if (value != passwordController.text) {
+//                               if (value != newPasswordController.text) {
 //                                 return 'Passwords do not match';
 //                               }
 //                               return null;
@@ -178,6 +226,7 @@
 // }
 
 
+
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:wbl_mobile_app/screens/login_screen.dart';
@@ -206,7 +255,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     currentPasswordController.dispose();
     newPasswordController.dispose();
     confirmPasswordController.dispose();
-    formKey.currentState?.dispose();
     super.dispose();
   }
 
@@ -216,6 +264,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         showSpinner = true;
       });
       // Implement your password change logic here.
+      await Future.delayed(Duration(seconds: 1)); // Simulate a network call
       setState(() {
         showSpinner = false;
       });

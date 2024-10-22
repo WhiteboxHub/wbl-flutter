@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:wbl_mobile_app/screens/register_screen.dart';
 import 'package:wbl_mobile_app/screens/forgot_password_screen.dart';
-import 'package:wbl_mobile_app/screens/tab_screen.dart'; // Assuming you have a TabScreen
+import 'package:wbl_mobile_app/screens/tab_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
- import 'package:provider/provider.dart';  // Add provider import
-import '../providers/user_provider.dart';  // Import UserProvider
+import 'package:provider/provider.dart';
+import '../providers/user_provider.dart';
+
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
 
@@ -21,12 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool isLoading = false;
+  bool isPasswordVisible = false; // State variable for password visibility
 
-  // Use the correct URL for the emulator
-  // static const apiUrl = "http://10.0.2.2:8000/api/login"; // for Android emulator
-  // static const apiUrl = "http://localhost:8000/api/login"; // for Android emulator
   static const apiUrl = "https://whitebox-learning.com/api/login";
-  // static const apiUrl = "http://192.168.0.19:8000/api/login"; // for ios emulator
 
   Future<void> loginUser() async {
     setState(() {
@@ -38,11 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
         Uri.parse(apiUrl),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
-        }, // Correct content type
+        },
         body: {
           'grant_type': 'password',
-          'username': emailController.text, // 'admin' in your case
-          'password': passwordController.text, // 'training' in your case
+          'username': emailController.text,
+          'password': passwordController.text,
           'scope': '',
           'client_id': 'string',
           'client_secret': 'string',
@@ -56,14 +54,12 @@ class _LoginScreenState extends State<LoginScreen> {
           // Save token in shared preferences for auto-login
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString('access_token', data['access_token']);
-
-          await prefs.setString('access_token', data['access_token']);
-          await prefs.setString('username', emailController.text);  // Save the username
+          await prefs.setString('username', emailController.text);
           await prefs.setBool('isLoggedIn', true);
 
           // Fetch the user details in the provider
           final userProvider = Provider.of<UserProvider>(context, listen: false);
-          await userProvider.fetchUserData(); // Load the user data after logging in
+          await userProvider.fetchUserData();
 
           // Token received, navigate to the TabScreen
           Navigator.pushReplacementNamed(context, TabScreen.routeName);
@@ -158,16 +154,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     filled: true,
                     fillColor: Colors.white,
                     prefixIcon: const Icon(Icons.lock, color: Colors.teal),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                        color: Colors.teal,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isPasswordVisible = !isPasswordVisible; // Toggle password visibility
+                        });
+                      },
+                    ),
                   ),
-                  obscureText: true,
+                  obscureText: !isPasswordVisible, // Control visibility based on the state variable
                 ),
                 const SizedBox(height: 16),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(
-                          context, ForgotPasswordScreen.routeName);
+                      Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.transparent,
@@ -179,21 +185,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 isLoading
                     ? const CircularProgressIndicator()
                     : Container(
-                        width: double.infinity, // Full-width button
+                        width: double.infinity,
                         margin: const EdgeInsets.symmetric(horizontal: 20),
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: ElevatedButton(
                           onPressed: loginUser,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromARGB(255, 95, 46, 209),
+                            backgroundColor: const Color.fromARGB(255, 95, 46, 209),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
                             padding: const EdgeInsets.symmetric(vertical: 16),
                           ),
-                          child: const Text('Login',
-                              style: TextStyle(color: Colors.white)),
+                          child: const Text('Login', style: TextStyle(color: Colors.white)),
                         ),
                       ),
                 const SizedBox(height: 16),
@@ -204,14 +208,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text("Don’t have an account?"),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(
-                              context, RegisterScreen.routeName);
+                          Navigator.pushNamed(context, RegisterScreen.routeName);
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.transparent,
                         ),
-                        child: const Text('Register',
-                            style: TextStyle(color: Colors.teal)),
+                        child: const Text('Register', style: TextStyle(color: Colors.teal)),
                       ),
                     ],
                   ),
