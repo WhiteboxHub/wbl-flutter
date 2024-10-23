@@ -444,7 +444,7 @@ class MyLearningScreen extends StatefulWidget {
 }
 
 class _MyLearningScreenState extends State<MyLearningScreen> {
-  String selectedOption = 'Recordings'; // Default selected option
+  String selectedOption = 'RECORDINGS'; // Default selected option
   String searchQuery = '';
   Timer? _debounce; // Timer for debouncing
 
@@ -510,20 +510,20 @@ class _MyLearningScreenState extends State<MyLearningScreen> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         setState(() {
-                          selectedOption = 'Recordings';
+                          selectedOption = 'RECORDINGS';
                         });
                       },
                       icon: const Icon(Icons.slideshow),
                       label: Text(
-                        'Recordings',
+                        'RECORDINGS',
                         style: TextStyle(
-                          color: selectedOption == 'Recordings'
+                          color: selectedOption == 'RECORDINGS'
                               ? Colors.white
                               : Colors.black,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: selectedOption == 'Recordings'
+                        backgroundColor: selectedOption == 'RECORDINGS'
                             ? Colors.purple
                             : Colors.grey.shade300,
                       ),
@@ -535,20 +535,20 @@ class _MyLearningScreenState extends State<MyLearningScreen> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         setState(() {
-                          selectedOption = 'Presentation';
+                          selectedOption = 'PRESENTATIONS';
                         });
                       },
                       icon: const Icon(Icons.chrome_reader_mode),
                       label: Text(
-                        'Presentation',
+                        'PRESENTATIONS',
                         style: TextStyle(
-                          color: selectedOption == 'Presentation'
+                          color: selectedOption == 'PRESENTATIONS'
                               ? Colors.white
                               : Colors.black,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: selectedOption == 'Presentation'
+                        backgroundColor: selectedOption == 'PRESENTATIONS'
                             ? Colors.purple
                             : Colors.grey.shade300,
                       ),
@@ -559,8 +559,8 @@ class _MyLearningScreenState extends State<MyLearningScreen> {
             ),
           ),
 
-          // Search bar for Recordings only
-          if (selectedOption == 'Recordings')
+          // Search bar for RECORDINGS only
+          if (selectedOption == 'RECORDINGS')
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
@@ -586,7 +586,7 @@ class _MyLearningScreenState extends State<MyLearningScreen> {
 
           // Expanded widget to maintain the fixed position of search bar and tabs
           Expanded(
-            child: selectedOption == 'Recordings'
+            child: selectedOption == 'RECORDINGS'
                 ? RecordingsWidget(
                     searchQuery: searchQuery.isNotEmpty
                         ? searchQuery

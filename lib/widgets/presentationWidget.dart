@@ -256,39 +256,59 @@ class _PresentationWidgetState extends State<PresentationWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // Define uniform width for buttons
+    double maxButtonWidth = 150;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Type selection with ChoiceChips
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+        // Container to wrap all button tabs
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          decoration: BoxDecoration(
+            color: Colors.white, // Light background for the container
+            borderRadius: BorderRadius.circular(20), // Rounded corners
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                blurRadius: 4,
+                offset: const Offset(0, 2), // Shadow position
+              ),
+            ],
+          ),
           child: Center(
             child: Wrap(
-              spacing: 20.0, // Space between chips
+              spacing: 20.0, // Space between chips horizontally
+              runSpacing: 10.0, // Space between rows of chips vertically
               alignment: WrapAlignment.center, // Align chips in the center
               children: ComponentType.values.map((type) {
                 return SizedBox(
-                  width: 130, // Set uniform width
-                  height: 50, // Set uniform height
-                  child: ChoiceChip(
-                    label: Text(
-                      type
-                          .toString()
-                          .split('.')
-                          .last
-                          .toUpperCase(), // Display enum value as string
-                      style: TextStyle(
-                        color:
-                            selectedType == type ? Colors.white : Colors.black,
+                  width: maxButtonWidth, // Uniform width
+                  height: 40, // Uniform height
+                  child: GestureDetector(
+                    onTap: () => onTypeChanged(type),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: selectedType == type
+                            ? const Color.fromARGB(255, 40, 118, 236)
+                            : Colors.grey[300], // Default light background
+                        borderRadius: BorderRadius.circular(20), // Rounded corners
+                        border: Border.all(
+                          color: selectedType == type
+                              ? Colors.blue
+                              : Colors.grey,
+                        ),
                       ),
-                      textAlign: TextAlign.center, // Center text
+                      alignment: Alignment.center,
+                      child: Text(
+                        type.toString().split('.').last.toUpperCase(),
+                        style: TextStyle(
+                          color: selectedType == type
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                      ),
                     ),
-                    selected: selectedType == type,
-                    selectedColor: const Color.fromARGB(
-                        255, 40, 118, 236), // Highlight selected chip
-                    onSelected: (selected) {
-                      if (selected) onTypeChanged(type);
-                    },
                   ),
                 );
               }).toList(),

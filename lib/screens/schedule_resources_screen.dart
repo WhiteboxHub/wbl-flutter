@@ -95,13 +95,13 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
             Container(
               margin: const EdgeInsets.fromLTRB(
                   16.0, 18.0, 16.0, 18.0), // left, top, right, bottom
-              color: Colors
-                  .grey.shade200, // Set background color for the button area
+              color: Colors.grey.shade200, // Set background color for the button area
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start, // Align items to the start
                   children: [
+                    // Add space using SizedBox
                     ElevatedButton.icon(
                       onPressed: () {
                         setState(() {
@@ -124,6 +124,7 @@ class _ScheduleResourcesScreenState extends State<ScheduleResourcesScreen> {
                             : unselectedButtonColor,
                       ),
                     ),
+                    SizedBox(width: 16), // Space between buttons
                     ElevatedButton.icon(
                       onPressed: () {
                         setState(() {

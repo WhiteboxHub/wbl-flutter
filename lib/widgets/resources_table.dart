@@ -57,6 +57,15 @@ class _ResourcesTableState extends State<ResourcesTable> {
     dataFuture = fetchAndCacheData();
   }
 
+  @override
+  void didUpdateWidget(ResourcesTable oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Check if the type has changed
+    if (widget.type != oldWidget.type) {
+      dataFuture = fetchAndCacheData(); // Fetch new data for the new type
+    }
+  }
+
   Future<List<dynamic>?> fetchAndCacheData() async {
     final prefs = await SharedPreferences.getInstance();
     final sessionData = prefs.getString('data_${widget.course}_${widget.type}');
