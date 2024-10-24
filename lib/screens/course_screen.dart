@@ -29,8 +29,8 @@ class _CourseScreenState extends State<CourseScreen> {
       'courseSubtitle': 'Learn Python from Beginner to Advanced',
     },
     {
-      'courseImage': 'assets/images/java.svg',
-      'courseTitle': 'Java Development',
+      'courseImage': 'assets/images/javascript.svg',
+      'courseTitle': 'JavaScript Development',
       'courseSubtitle': 'Become a Java Developer Expert',
     },
     {

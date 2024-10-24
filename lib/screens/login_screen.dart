@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text(
                   'Welcome!',
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 50,
                     fontWeight: FontWeight.bold,
                     color: const Color.fromARGB(255, 126, 22, 245),
                   ),

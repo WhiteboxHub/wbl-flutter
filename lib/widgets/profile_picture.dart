@@ -152,8 +152,9 @@ class ProfilePicture extends StatelessWidget {
         shape: BoxShape.circle,
         gradient: LinearGradient( // Use a gradient
           colors: [
-            Color.fromARGB(255, 118, 248, 187), // First color
-            Color.fromARGB(255, 184, 238, 213), // Second color
+            Color.fromARGB(255, 238, 232, 251), // First color
+            Color.fromARGB(255, 170, 136, 244), // First color
+            Color.fromARGB(255, 238, 232, 251), // First color
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -172,7 +173,7 @@ class ProfilePicture extends StatelessWidget {
                     : username.isNotEmpty
                         ? username[0].toUpperCase() // Fallback to first letter of username if full name is not available
                         : '?', // Fallback if both are empty
-                style: const TextStyle(fontSize: 40, color: Color.fromARGB(255, 161, 127, 255)),
+                style: const TextStyle(fontSize: 40, color: Colors.teal),
               )
             : null, // Do not display text if image is available
       ),

@@ -579,7 +579,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
+                  SvgPicture.asset( 
                     'assets/wbl_logo.svg', // Replace with your SVG logo path
                     height: 200,
                     width: 200,
