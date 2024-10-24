@@ -360,12 +360,12 @@ class YourProfileScreen extends StatelessWidget {
     final user = userProvider.user;
 
     // Debugging prints (optional)
-    // print('----------------------userProvider: ${userProvider}'); // Add this
-    // print('----------------------User : ${user}'); // Add this
-    // print('----------------------User in Profile Screen: ${user?.username}'); // Add this
-    // print('---------------------- User : ${userProvider.user}'); // Check if the user is fetched
-    // print('---------------------- Full Name : ${userProvider.user?.fullName}'); // Check if the full name is fetched
-    // print('---------------------- Email : ${userProvider.user?.email}'); // Check if the email is fetched
+    print('----------------------userProvider: ${userProvider}'); // Add this
+    print('----------------------User : ${user}'); // Add this
+    print('----------------------User in Profile Screen: ${user?.username}'); // Add this
+    print('---------------------- User : ${userProvider.user}'); // Check if the user is fetched
+    print('---------------------- Full Name : ${userProvider.user?.fullName}'); // Check if the full name is fetched
+    print('---------------------- Email : ${userProvider.user?.email}'); // Check if the email is fetched
 
     return Scaffold(
       body: Padding(

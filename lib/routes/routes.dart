@@ -45,6 +45,7 @@ import 'package:wbl_mobile_app/screens/your_profile_screen.dart';
 import 'package:wbl_mobile_app/screens/change_password_screen.dart';
 import 'package:wbl_mobile_app/screens/edit_profile_screen.dart';
 import 'package:wbl_mobile_app/screens/contact_us_screen.dart'; // Import the Contact Us screen
+import 'package:wbl_mobile_app/screens/welcome_screen.dart';
 
 class PageRoutes {
   Map<String, WidgetBuilder> routes() {
@@ -63,6 +64,8 @@ class PageRoutes {
       ChangePasswordScreen.routeName: (ctx) => const ChangePasswordScreen(),
       EditProfileScreen.routeName: (ctx) =>const EditProfileScreen(),
       ContactUsScreen.routeName: (ctx) => const ContactUsScreen(), // Added Contact Us Screen route
+      WelcomeScreen.routeName: (context) => const WelcomeScreen(),
+  
 
     };
   }
