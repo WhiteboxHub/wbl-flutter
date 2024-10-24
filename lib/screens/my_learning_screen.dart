@@ -498,7 +498,6 @@ class _MyLearningScreenState extends State<MyLearningScreen> {
           // Option switching buttons
           Container(
             margin: const EdgeInsets.fromLTRB(16.0, 18.0, 16.0, 5.0),
-            color: Colors.grey.shade200,
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
